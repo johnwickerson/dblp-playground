@@ -1,28 +1,39 @@
-MMDB=mmdb-2016-12-09.jar
+MMDB=mmdb-2016-12-09
+DBLP=http://dblp.org
 
 run: dblp.xml dblp.dtd DblpExampleParser.class
-	java -cp $(MMDB):. DblpExampleParser dblp.xml
+	java -cp $(MMDB).jar:. DblpExampleParser dblp.xml
 
 dblp.xml.gz:
-	wget http://dblp.org/xml/dblp.xml.gz
+	wget $(DBLP)/xml/dblp.xml.gz
 
 dblp.dtd:
-	wget http://dblp.org/xml/dblp.dtd
+	wget $(DBLP)/xml/dblp.dtd
 
-$(MMDB):
-	wget http://dblp.org/src/$(MMDB)
+$(MMDB).jar:
+	wget $(DBLP)/src/$(MMDB).jar
+
+$(MMDB)-javadoc.jar:
+	wget $(DBLP)/src/$(MMDB)-javadoc.jar
 
 dblp.xml: dblp.xml.gz
 	gunzip -k dblp.xml.gz
 
-DblpExampleParser.class: $(MMDB) DblpExampleParser.java
-	javac -cp $(MMDB) DblpExampleParser.java
+DblpExampleParser.class: $(MMDB).jar DblpExampleParser.java
+	javac -cp $(MMDB).jar DblpExampleParser.java
 
-.PHONY: run clean deepclean
+.PHONY: run clean doc
+
+doc: $(MMDB)-javadoc.jar
+	mkdir -p doc
+	cd doc; jar -xvf ../$(MMDB)-javadoc.jar
+	open doc/index.html
 
 clean:
 	rm -f DblpExampleParser.class
 	rm -f dblp.dtd
 	rm -f dblp.xml
 	rm -f dblp.xml.gz
-	rm -f $(MMDB)
+	rm -f $(MMDB).jar
+	rm -f $(MMDB)-javadoc.jar
+	rm -rf doc
