@@ -142,7 +142,7 @@ class DblpExampleParser {
 	System.out.format("  %s\n", coauthor.getPrimaryName().getName());
       }
     }
-    System.out.format("%s, done\n", getTimestamp());
+    System.out.format("%s, done\n\n", getTimestamp());
   }
 
   static void findFOCS2010Authors(DblpInterface dblp) {
@@ -168,7 +168,7 @@ class DblpExampleParser {
     }
     for (Person author : authors.keySet())
       System.out.format("  %dx %s\n", authors.get(author), author.getPrimaryName().getName());
-    System.out.format("%s, done\n", getTimestamp());
+    System.out.format("%s, done\n\n", getTimestamp());
   }
   
   public static void main(String[] args) {
