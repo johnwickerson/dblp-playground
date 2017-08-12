@@ -85,137 +85,56 @@ class DblpExampleParser {
     return dblp;
   }
 
-  static void findLongestName(DblpInterface dblp) {
-    System.out.format("%s, finding longest name in dblp...\n",
-		      getTimestamp());
-    String longestName = null;
-    int longestNameLength = 0;
-    for (Person pers : dblp.getPersons()) {
-      for (PersonName name : pers.getNames()) {
-	if (name.getName().length() > longestNameLength) {
-	  longestName = name.getName();
-	  longestNameLength = longestName.length();
-	}
-      }
-    }
-    System.out.format("%s, %s (%d chars)\n\n",
-		      getTimestamp(), longestName, longestNameLength);
-  }
-
-  static void findMostProlificAuthor(DblpInterface dblp) {
-    System.out.format("%s, finding most prolific author...\n",
-		      getTimestamp());
-    String prolificAuthorName = null;
-    int prolificAuthorCount = 0;
-    for (Person pers : dblp.getPersons()) {
-      int publsCount = pers.numberOfPublications();
-      if (publsCount > prolificAuthorCount) {
-	prolificAuthorCount = publsCount;
-	prolificAuthorName = pers.getPrimaryName().getName();
-      }
-    }
-    System.out.format("%s, %s, %d records\n\n",
-		      getTimestamp(), prolificAuthorName,
-		      prolificAuthorCount);
-  }
-
-  static void findMostCoauthors(DblpInterface dblp) {
-    System.out.format("%s, finding author with most coauthors...\n",
-		      getTimestamp());
-    String connectedAuthorName = null;
-    int connectedAuthorCount = 0;
-    for (Person pers : dblp.getPersons()) {
-      int coauthorCount = dblp.numberOfCoauthors(pers);
-      if (coauthorCount > connectedAuthorCount) {
-	connectedAuthorCount = coauthorCount;
-	connectedAuthorName = pers.getPrimaryName().getName();
-      }
-    }
-    System.out.format("%s, %s, %d coauthors\n\n",
-		      getTimestamp(), connectedAuthorName,
-		      connectedAuthorCount);
-  }
-
-  static void findJimGrayCoauthors(DblpInterface dblp) {
-    System.out.format("%s, finding coauthors of Jim Gray...\n",
-		      getTimestamp());
-    Person don = dblp.getPersonByName("Jim Gray");
-    for (int i = 0; i < dblp.numberOfCoauthorCommunities(don); i++) {
-      Collection<Person> coauthors = dblp.getCoauthorCommunity(don, i);
-      System.out.format("Group %d:\n", i);
-      for (Person coauthor : coauthors) {
-	System.out.format("  %s\n", coauthor.getPrimaryName().getName());
-      }
-    }
-    System.out.format("%s, done\n\n", getTimestamp());
-  }
-
   static Comparator<Person> person_cmp =
       (Person o1, Person o2) ->
       o1.getPrimaryName().getName().
       compareTo(o2.getPrimaryName().getName());
   
-  static void findFOCS2010Authors(DblpInterface dblp) {
-    System.out.format("%s, finding authors of FOCS 2010...\n",
-		      getTimestamp());
-    Map<Person, Integer> authors = new TreeMap(person_cmp);
-    for (Publication publ : dblp.getPublications()) {
-      FieldReader reader = publ.getFieldReader();
-      if ("FOCS".equals(reader.valueOf("booktitle"))
-	  && "2010".equals(reader.valueOf("year"))) {
-	for (PersonName name : publ.getNames()) {
-	  Person pers = name.getPerson();
-	  if (authors.containsKey(pers))
-	    authors.put(pers, authors.get(pers) + 1);
-	  else
-	    authors.put(pers, 1);
-	}
-      }
-    }
-    for (Person author : authors.keySet())
-      System.out.format("  %dx %s\n", authors.get(author), author.getPrimaryName().getName());
-    System.out.format("%s, done\n\n", getTimestamp());
-  }
-  
   static Map<Person, List<Integer>>
     findAuthorsByYear(DblpInterface dblp, String confName) {
     Map<Person, List<Integer>> years_of = new TreeMap(person_cmp);
     
-      for (Publication publ : dblp.getPublications()) {
-	FieldReader reader = publ.getFieldReader();
-	if (confName.equals(reader.valueOf("booktitle"))) {
-	  int year = Integer.parseInt(reader.valueOf("year"));
-	  for (PersonName name : publ.getNames()) {
-	    Person pers = name.getPerson();
-	    if (! years_of.containsKey(pers)) {
-	      years_of.put(pers, new ArrayList());
-	    }
-	    years_of.get(pers).add(year);
+    for (Publication publ : dblp.getPublications()) {
+      FieldReader reader = publ.getFieldReader();
+      if (confName.equals(reader.valueOf("booktitle"))) {
+	int year = Integer.parseInt(reader.valueOf("year"));
+	for (PersonName name : publ.getNames()) {
+	  Person pers = name.getPerson();
+	  if (! years_of.containsKey(pers)) {
+	    years_of.put(pers, new ArrayList());
 	  }
+	  years_of.get(pers).add(year);
 	}
       }
-      
-      for (Person p : years_of.keySet()) {
-	List<Integer> ys = years_of.get(p);
-	Collections.sort(ys);
-      }
-      return years_of;
+    }
+    
+    for (Person p : years_of.keySet()) {
+      List<Integer> ys = years_of.get(p);
+      Collections.sort(ys);
+    }
+    return years_of;
   }
-
+  
   static void printList (Map<Person, List<Integer>> years_of) {
     
     // Print each author together with their list of years
     for (Person p : years_of.keySet()) {
-      System.out.format("%s:", p.getPrimaryName().getName());
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%s [%s]:", p.getPrimaryName().getName(), url);
       for (int y : years_of.get(p)) {
 	System.out.format(" %d", y);
       }
       System.out.format("\n");
+      /*for (String k : p.getAttributes().keySet()) {
+	String v = p.getAttributes().get(k);
+	System.out.format(" %s=%s", k, v);
+      }*/
     }
     System.out.format("\n");
   }
 
-  static void findMostPapers(Map<Person, List<Integer>> years_of) {
+  static void findMostPapers(Map<Person, List<Integer>> years_of,
+			     int max_pos) {
     // Find authors with most papers
     System.out.format("%s, finding authors with most papers...\n",
 		      getTimestamp());
@@ -227,17 +146,23 @@ class DblpExampleParser {
       return Integer.compare(count2, count1);
     };
     ps.sort(compare_by_num_papers);
+    int pos = 0;
+    int prev_count = 0;
     for (Person p : ps) {
       int count = years_of.get(p).size();
-      if (count > 1) {
-	String name = p.getPrimaryName().getName();
-	System.out.format("%d: %s\n", count, name);
-      }
+      if (prev_count != count) pos++;
+      prev_count = count;
+      if (pos > max_pos && max_pos != 0) break;
+      String name = p.getPrimaryName().getName();
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%d: %s [%s] (%d papers)\n",
+			pos, name, url, count);
     }
     System.out.format("\n");
   }
 
-  static void findLongestGap(Map<Person, List<Integer>> years_of) {
+  static void findLongestGap(Map<Person, List<Integer>> years_of,
+			     int max_pos) {
     // Find authors with the longest gap
     System.out.format("%s, finding authors with the longest holiday...\n", getTimestamp());
     Map<Person, Integer> gap_of = new TreeMap(person_cmp);
@@ -258,17 +183,27 @@ class DblpExampleParser {
       return Integer.compare(gap_of.get(p2), gap_of.get(p1));
     };
     ps.sort(compare_by_gap);
+    int pos = 0;
+    int prev_gap = 0;
     for (Person p : ps) {
       int gap = gap_of.get(p);
-      if (gap > 0) {
-	String name = p.getPrimaryName().getName();
-	System.out.format("%s (gap=%d)\n", name, gap);
+      if (prev_gap != gap) pos++;
+      prev_gap = gap;
+      if (pos > max_pos && max_pos != 0) break;
+      String name = p.getPrimaryName().getName();
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%d: %s [%s] (%d year gap)\n  ",
+			pos, name, url, gap);
+      for (int y : years_of.get(p)) {
+	System.out.format(" %d", y);
       }
+      System.out.format("\n");
     }
     System.out.format("\n");
   }
 
-  static void findLongestStreak(Map<Person, List<Integer>> years_of) {
+  static void findLongestStreak(Map<Person, List<Integer>> years_of,
+				int max_pos) {
     // Find authors with the longest streak
     System.out.format("%s, finding authors with the longest streak...\n", getTimestamp());
     Map<Person, Integer> streak_of = new TreeMap(person_cmp);
@@ -295,17 +230,27 @@ class DblpExampleParser {
       return Integer.compare(streak_of.get(p2), streak_of.get(p1));
     };
     ps.sort(compare_by_streak);
+    int pos = 0;
+    int prev_streak = 0;
     for (Person p : ps) {
       int streak = streak_of.get(p);
-      if (streak > 1) {
-	String name = p.getPrimaryName().getName();
-	System.out.format("%s (streak=%d)\n", name, streak);
+      if (prev_streak != streak) pos++;
+      prev_streak = streak;
+      if (pos > max_pos && max_pos != 0) break;
+      String name = p.getPrimaryName().getName();
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%d: %s [%s] (streak of %d)\n  ",
+			pos, name, url, streak);
+      for (int y : years_of.get(p)) {
+	System.out.format(" %d", y);
       }
+      System.out.format("\n");
     }
     System.out.format("\n");
   }
 
-  static void findLongestRange(Map<Person, List<Integer>> years_of) {
+  static void findLongestRange(Map<Person, List<Integer>> years_of,
+			       int max_pos) {
     // Find authors with the longest range
     System.out.format("%s, finding authors with the longest range...\n", getTimestamp());
     Map<Person, Integer> range_of = new TreeMap(person_cmp);
@@ -322,17 +267,27 @@ class DblpExampleParser {
       return Integer.compare(range_of.get(p2), range_of.get(p1));
     };
     ps.sort(compare_by_range);
+    int pos = 0;
+    int prev_range = 0;
     for (Person p : ps) {
       int range = range_of.get(p);
-      if (range > 0) {
-	String name = p.getPrimaryName().getName();
-	System.out.format("%s (range=%d)\n", name, range);
+      if (prev_range != range) pos++;
+      prev_range = range;
+      if (pos > max_pos && max_pos != 0) break;
+      String name = p.getPrimaryName().getName();
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%d: %s [%s] (range of %d years)\n  ",
+			pos, name, url, range);
+      for (int y : years_of.get(p)) {
+	System.out.format(" %d", y);
       }
+      System.out.format("\n");
     }
     System.out.format("\n");
   }
   
-  static void findMostYears(Map<Person, List<Integer>> years_of) {
+  static void findMostYears(Map<Person, List<Integer>> years_of,
+			    int max_pos) {
     // Find authors with papers at the most conferences
     System.out.format("%s, finding authors with papers at the most conferences ...\n",
 		      getTimestamp());
@@ -344,17 +299,27 @@ class DblpExampleParser {
       return Integer.compare(count2, count1);
     };
     ps.sort(compare_by_num_confs);
+    int pos = 0;
+    int prev_count = 0;
     for (Person p : ps) {
       int count = new HashSet(years_of.get(p)).size();
-      if (count >  1) {
-	String name = p.getPrimaryName().getName();
-	System.out.format("%d: %s\n", count, name);
+      if (prev_count != count) pos++;
+      prev_count = count;
+      if (pos > max_pos && max_pos != 0) break;
+      String name = p.getPrimaryName().getName();
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%d: %s [%s] (%d conferences)\n  ",
+			pos, name, url, count);
+      for (int y : years_of.get(p)) {
+	System.out.format(" %d", y);
       }
+      System.out.format("\n");
     }
     System.out.format("\n");
   }
 
-  static void findMostPapersPerConf(Map<Person, List<Integer>> years_of) {
+  static void findMostPapersPerConf(Map<Person, List<Integer>> years_of,
+				    int max_pos) {
     // Find authors with the most papers per conference
     System.out.format("%s, finding authors with the most papers per conference...\n", getTimestamp());
     Map<Person, Integer> ppc_of = new TreeMap(person_cmp);
@@ -383,12 +348,21 @@ class DblpExampleParser {
       return Integer.compare(ppc_of.get(p2), ppc_of.get(p1));
     };
     ps.sort(compare_by_ppc);
+    int pos = 0;
+    int prev_ppc = 0;
     for (Person p : ps) {
       int ppc = ppc_of.get(p);
-      if (ppc > 1) {
-	String name = p.getPrimaryName().getName();
-	System.out.format("%s (ppc=%d)\n", name, ppc);
+      if (prev_ppc != ppc) pos++;
+      prev_ppc = ppc;
+      if (pos > max_pos && max_pos != 0) break;
+      String name = p.getPrimaryName().getName();
+      String url = p.getKey().replace("homepages", "http://dblp.org/pid");
+      System.out.format("%d: %s [%s] (%d papers in one conference)\n  ",
+			pos, name, url, ppc);
+      for (int y : years_of.get(p)) {
+	System.out.format(" %d", y);
       }
+      System.out.format("\n");
     }
     System.out.format("\n");
   }
@@ -406,33 +380,21 @@ class DblpExampleParser {
     
     DblpInterface dblp = mkInterface(dblpXmlFilename);
 
-    /*
-    findLongestName(dblp);
+    Map<Person, List<Integer>> years_of = findAuthorsByYear(dblp, "FPT");
 
-    findMostProlificAuthor(dblp);
+    //printList(years_of);
 
-    findMostCoauthors(dblp);
+    findMostPapers(years_of, 10);
 
-    findJimGrayCoauthors(dblp);
+    findMostYears(years_of, 10);
 
-    findFOCS2010Authors(dblp);
-    */
+    findLongestGap(years_of, 5);
 
-    Map<Person, List<Integer>> years_of = findAuthorsByYear(dblp, "FPGA");
+    findLongestRange(years_of, 5);
 
-    printList(years_of);
+    findLongestStreak(years_of, 5);
 
-    findMostPapers(years_of);
-
-    findMostYears(years_of);
-
-    findLongestGap(years_of);
-
-    findLongestRange(years_of);
-
-    findLongestStreak(years_of);
-
-    findMostPapersPerConf(years_of);
+    findMostPapersPerConf(years_of, 4);
     
     System.out.println("Finished.");
   }
