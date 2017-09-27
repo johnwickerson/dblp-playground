@@ -332,12 +332,11 @@ class DblpExampleParser {
       int cur_y = 0;
       for (int i = 0; i < years.size(); i++) {
 	cur_y = years.get(i);
-	if (prev_y == cur_y) {
+	if (prev_y == cur_y)
 	  cur_ppc = cur_ppc + 1;
-	} else {
-	  max_ppc = Math.max (max_ppc, cur_ppc);
+        else
 	  cur_ppc = 1;
-	}
+	max_ppc = Math.max (max_ppc, cur_ppc);
 	prev_y = cur_y;
       }
       ppc_of.put(p, max_ppc);
@@ -380,7 +379,7 @@ class DblpExampleParser {
     
     DblpInterface dblp = mkInterface(dblpXmlFilename);
 
-    Map<Person, List<Integer>> years_of = findAuthorsByYear(dblp, "FPT");
+    Map<Person, List<Integer>> years_of = findAuthorsByYear(dblp, "PLDI");
 
     //printList(years_of);
 
