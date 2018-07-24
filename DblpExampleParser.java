@@ -96,7 +96,8 @@ class DblpExampleParser {
     
     for (Publication publ : dblp.getPublications()) {
       FieldReader reader = publ.getFieldReader();
-      if (confName.equals(reader.valueOf("booktitle"))) {
+      if (confName.equals(reader.valueOf("booktitle")) ||
+	  confName.equals(reader.valueOf("number"))) {
 	int year = Integer.parseInt(reader.valueOf("year"));
 	for (PersonName name : publ.getNames()) {
 	  Person pers = name.getPerson();
@@ -393,7 +394,7 @@ class DblpExampleParser {
 
     findLongestStreak(years_of, 5);
 
-    findMostPapersPerConf(years_of, 4);
+    findMostPapersPerConf(years_of, 2);
     
     System.out.println("Finished.");
   }
