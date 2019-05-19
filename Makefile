@@ -2,7 +2,7 @@ MMDB=mmdb-2016-12-09
 DBLP=http://dblp.org
 
 run: dblp.xml dblp.dtd DblpExampleParser.class
-	java -Xmx4g -cp $(MMDB).jar:. DblpExampleParser dblp.xml
+	java -Xmx7g -cp $(MMDB).jar:. DblpExampleParser dblp.xml
 
 dblp.xml.gz:
 	wget $(DBLP)/xml/dblp.xml.gz
