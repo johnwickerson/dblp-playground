@@ -1,4 +1,4 @@
-MMDB=mmdb-2016-12-09
+MMDB=mmdb-2019-04-29
 DBLP=http://dblp.org
 
 run: dblp.xml dblp.dtd DblpExampleParser.class

@@ -47,6 +47,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import org.dblp.DblpInterface;
+import org.dblp.mmdb.Field;
 import org.dblp.mmdb.FieldReader;
 import org.dblp.mmdb.Person;
 import org.dblp.mmdb.PersonName;
@@ -89,15 +90,33 @@ class DblpExampleParser {
       (Person o1, Person o2) ->
       o1.getPrimaryName().getName().
       compareTo(o2.getPrimaryName().getName());
+
+  static boolean paperTooShort(String str_pages) {
+    if (str_pages == null) return true; // no "pages" field ==> not proper.
+    String[] arr_pages = str_pages.split("-");
+    if (arr_pages.length == 1) return true; // single page ==> not proper.
+    String str_start = arr_pages[0];
+    String[] arr_start = str_start.split(":");
+    str_start = arr_start[arr_start.length - 1];
+    int start = Integer.parseInt(str_start);
+    String str_end = arr_pages[1];
+    String[] arr_end = str_end.split(":");
+    str_end = arr_end[arr_end.length - 1];
+    int end = Integer.parseInt(str_end);
+    int paper_length = end - start + 1;
+    return (paper_length < 4); // proper papers are at least 4 pages.
+  }
   
   static Map<Person, List<Integer>>
-    findAuthorsByYear(DblpInterface dblp, String confName) {
+    findAuthorsByYear(DblpInterface dblp, List<String> confName) {
     Map<Person, List<Integer>> years_of = new TreeMap(person_cmp);
     
     for (Publication publ : dblp.getPublications()) {
       FieldReader reader = publ.getFieldReader();
-      if (confName.equals(reader.valueOf("booktitle")) ||
-	  confName.equals(reader.valueOf("number"))) {
+      
+      if (confName.contains(reader.valueOf("booktitle")) ||
+	  confName.contains(reader.valueOf("number"))) {
+	if (paperTooShort(reader.valueOf("pages"))) continue;
 	int year = Integer.parseInt(reader.valueOf("year"));
 	for (PersonName name : publ.getNames()) {
 	  Person pers = name.getPerson();
@@ -424,7 +443,13 @@ class DblpExampleParser {
   
   public static void main(String[] args) {
 
-    String conf = "FPGA";
+    List<String> conf = new ArrayList();
+    //conf.add("FPT"); conf.add("ICFPT");
+    //conf.add("FPGA");
+    //conf.add("FCCM");
+    //conf.add("FPL");
+    conf.add("POPL");
+    //conf.add("PLDI");
     int this_year = 2019;
     
     // we need to raise entityExpansionLimit because the dblp.xml has millions of entities
