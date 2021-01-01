@@ -93,6 +93,8 @@ class DblpExampleParser {
 
   static boolean paperTooShort(String str_pages) {
     if (str_pages == null) return true; // no "pages" field ==> not proper.
+    String[] arr_pageranges = str_pages.split(",");
+    str_pages = arr_pageranges[0]; // occasionally papers have multiple ranges!
     String[] arr_pages = str_pages.split("-");
     if (arr_pages.length == 1) return true; // single page ==> not proper.
     String str_start = arr_pages[0];
@@ -105,10 +107,16 @@ class DblpExampleParser {
     int end = Integer.parseInt(str_end);
     int paper_length = end - start + 1;
     return (paper_length < 4); // proper papers are at least 4 pages.
+
+  }
+
+  static Map<Person, List<Integer>>
+    findAuthorsByYear(DblpInterface dblp, List<String> confName) {
+    return findAuthorsByYear(dblp, null, confName, 1900, 2500);
   }
   
   static Map<Person, List<Integer>>
-    findAuthorsByYear(DblpInterface dblp, List<String> confName) {
+    findAuthorsByYear(DblpInterface dblp, String[] authors_of_interest, List<String> confName, int first_year, int last_year) {
     Map<Person, List<Integer>> years_of = new TreeMap(person_cmp);
     
     for (Publication publ : dblp.getPublications()) {
@@ -118,8 +126,17 @@ class DblpExampleParser {
 	  confName.contains(reader.valueOf("number"))) {
 	if (paperTooShort(reader.valueOf("pages"))) continue;
 	int year = Integer.parseInt(reader.valueOf("year"));
+	if (year < first_year) continue;
+	if (year > last_year) continue;
 	for (PersonName name : publ.getNames()) {
 	  Person pers = name.getPerson();
+	  if (authors_of_interest != null) {
+	    boolean of_interest = false;
+	    for (String name_of_interest : authors_of_interest)
+	      if (name_of_interest.equals(pers.getPrimaryName().getName()))
+		of_interest = true;
+	    if (! of_interest) continue;
+	  }
 	  if (! years_of.containsKey(pers)) {
 	    years_of.put(pers, new ArrayList());
 	  }
@@ -133,6 +150,117 @@ class DblpExampleParser {
       Collections.sort(ys);
     }
     return years_of;
+  }
+
+  static List<String>
+    findTitles(DblpInterface dblp, List<String> confName, String[] authors_of_interest, int first_year, int last_year) {
+    List<String> titles = new ArrayList();
+    
+    for (Publication publ : dblp.getPublications()) {
+      FieldReader reader = publ.getFieldReader();
+      
+      if (confName.contains(reader.valueOf("booktitle")) ||
+	  confName.contains(reader.valueOf("number"))) {
+	if (paperTooShort(reader.valueOf("pages"))) continue;
+	int year = Integer.parseInt(reader.valueOf("year"));
+	if (year < first_year) continue;
+	if (year > last_year) continue;
+	if (authors_of_interest != null) {
+	  boolean of_interest = false;
+	  for (PersonName name : publ.getNames()) {
+	    Person pers = name.getPerson();
+	    for (String name_of_interest : authors_of_interest)
+	      if (name_of_interest.equals(pers.getPrimaryName().getName())) {
+		of_interest = true;
+		System.out.format("Found %s paper from %d by %s.\n", confName.get(0), year, name_of_interest);
+		break;
+	      }
+	  }
+	  if (! of_interest) continue;
+	}
+	
+	titles.add(reader.valueOf("title"));
+      }
+    }
+
+    Collections.sort(titles);
+
+    //System.out.format("First alphabetically: %s\n", titles.get(0));
+    //for (int i = 1; i < 50; i++) 
+    //  System.out.format("Last alphabetically: %s\n", titles.get(titles.size() - i));
+
+    Comparator<String> compare_by_length =
+      (String s1, String s2) -> {
+      return Integer.compare(s1.length(), s2.length());
+    };
+    
+    titles.sort(compare_by_length);
+
+    System.out.format("Number of titles: %d.\n", titles.size());
+    
+    return titles;
+  }
+
+  static void
+    findAuthorLists(DblpInterface dblp, List<String> confName) {
+    List<Publication> pubs = new ArrayList();
+    
+    for (Publication publ : dblp.getPublications()) {
+      FieldReader reader = publ.getFieldReader();
+      
+      if (confName.contains(reader.valueOf("booktitle")) ||
+	  confName.contains(reader.valueOf("number"))) {
+	if (paperTooShort(reader.valueOf("pages"))) continue;
+	pubs.add(publ);
+      }
+    }
+
+    Comparator<Publication> compare_by_authorship =
+      (Publication p1, Publication p2) -> {
+      return Integer.compare(p1.getNames().size(), p2.getNames().size());
+    };
+    
+    pubs.sort(compare_by_authorship);
+
+    int single_authors = 0;
+    for (int i = 0; i < 250; i++) {
+      Publication publ =  pubs.get(i);
+      if (publ.getNames().size() == 1)
+	single_authors++;
+      else break;
+    }
+    System.out.format("1 author: %d publications\n", single_authors);
+    
+    for (int i = 1; i < 50; i++) {
+      Publication publ =  pubs.get(pubs.size() - i);
+      FieldReader reader = publ.getFieldReader();
+      System.out.format("%d author(s): %s\n", publ.getNames().size(), reader.valueOf("title"));
+    }
+   
+  }
+
+  static void
+    findShortestTitles(List<String> titles) {
+
+    int targetLen = titles.get(0).length();
+    for (int i = 0; i < titles.size(); i++) {
+      String title = titles.get(i);
+      if (title.length() == targetLen)
+	System.out.format("%s\n", title);
+      else break;
+    }
+  }
+
+  static void
+    findLongestTitles(List<String> titles) {
+
+    int targetLen = titles.get(titles.size() - 1).length();
+    for (int i = titles.size() - 1; i >= 0; i--) {
+      String title = titles.get(i);
+      if (title.length() == targetLen)
+	System.out.format("%s\n", title);
+      else break;
+    }
   }
   
   static void printList (Map<Person, List<Integer>> years_of) {
@@ -448,9 +576,11 @@ class DblpExampleParser {
     //conf.add("FPGA");
     //conf.add("FCCM");
     //conf.add("FPL");
-    conf.add("POPL");
     //conf.add("PLDI");
-    int this_year = 2019;
+    //conf.add("ICFP");
+    //conf.add("OOPSLA");
+    conf.add("POPL");
+    int this_year = 2020;
     
     // we need to raise entityExpansionLimit because the dblp.xml has millions of entities
     System.setProperty("entityExpansionLimit", "10000000");
@@ -463,21 +593,123 @@ class DblpExampleParser {
     
     DblpInterface dblp = mkInterface(dblpXmlFilename);
 
-    Map<Person, List<Integer>> years_of = findAuthorsByYear(dblp, conf);
+    /*String[] authors_of_interest =
+  {"Isil Dillig",
+   "Nir Piterman",
+   "Cesare Tinelli",
+   "Nikolaj Bjørner",
+   "Arie Gurfinkel",
+   "Ufuk Topcu",
+   "Wei-Ngan Chin",
+   "Alan J. Hu",
+   "Franjo Ivaňcíc",
+   "Grigore Roşu",
+   "Margus Veanes",
+   "Christel Baier",
+   "Natasha Sharygina",
+   "Aarti Gupta",
+   "Eran Yahav",
+   "Rajeev Alur",
+   "Patrice Godefroid",
+   "Koushik Sen",
+   "Gilles Barthe",
+   "Chris Hawblitzel",
+   "Joao Marques-Silva",
+   "Mayur Naik",
+   "Roderick Bloem",
+   "Adam Chlipala",
+   "Ranjit Jhala",
+   "Natarajan Shankar",
+   "Hongseok Yang",
+   "Sanjit A. Seshia",
+   "Klaus Havelund"};*/
+    
+
+    /*String[] authors_of_interest =
+  {"Walter Binder",
+   "Martin Hirzel",
+   "Suresh Jagannathan",
+   "Gabriele Keller",
+   "Shriram Krishnamurthi",
+   "Kathryn S. McKinley",
+   "Louis-Noël Pouchet",
+   "Michael Pradel",
+   "Shaz Qadeer",
+   "Zhendong Su",
+   "Saman P. Amarasinghe",
+   "Ras Bodík",
+   "Satish Chandra 0001",
+   "Albert Cohen 0001",
+   "Isil Dillig",
+   "Ranjit Jhala",
+   "James R. Larus",
+   "Andrew C. Myers",
+   "Erez Petrank",
+   "Eran Yahav"};*/
+
+  
+    /*String[] authors_of_interest =
+      {"Alan Jeffrey",
+       "Andreas Podelski",
+       "David A. Naumann",
+       "Gavin M. Bierman",
+       "P. Madhusudan",
+       "Martin Erwig",
+       "Matthew J. Parkinson",
+       "Mayur Naik",
+       "Nate Foster",
+       "Nikhil Swamy",
+       "Peter Selinger",
+       "Scott Owens",
+       "Suresh Jagannathan",
+       "Swarat Chaudhuri",
+       "Stephanie Weirich"};*/
+  
+    String[] authors_of_interest =
+      {"Philip Wadler",
+       "Steve Zdancewic",
+       "Benjamin C. Pierce",
+       "David Walker",
+       "Zhendong Su",
+       "Rastislav Bodík",
+       "Matthias Felleisen",
+       "Robert Harper 0001",
+       "Thomas W. Reps",
+       "Simon L. Peyton Jones",
+       "Kathryn S. McKinley",
+       "Shmuel Sagiv",
+       "Martin Odersky",
+       "Alexander Aiken",
+       "Michael Hicks 0001",
+       "Rupak Majumdar",
+       "Jan Vitek",
+       "Sumit Gulwani",
+       "Martin C. Rinard",
+       "Cormac Flanagan",
+       "Peter Sewell"};
+
+List<String> titles = findTitles(dblp, conf, authors_of_interest, 2015, 2020);
+
+    //findShortestTitles(titles);
+    //findLongestTitles(titles);
+
+    //findAuthorLists(dblp, conf);
+
+    //Map<Person, List<Integer>> years_of = findAuthorsByYear(dblp, authors_of_interest, conf, 2015, 2020);
 
     //printList(years_of);
 
-    findMostPapers(years_of, 10);
+    //findMostPapers(years_of, 8);
 
-    findMostConfs(years_of, 10);
+    //findMostConfs(years_of, 5);
 
-    findLongestVacation(years_of, 5);
+    //findLongestVacation(years_of, 5);
 
-    findLongestCareer(years_of, 5);
+    //findLongestCareer(years_of, 5);
 
-    findLongestStreak(years_of, 5, this_year);
+    //findLongestStreak(years_of, 5, this_year);
 
-    findMostPapersPerConf(years_of, 2);
+    //findMostPapersPerConf(years_of, 2);
     
     System.out.println("Finished.");
   }
