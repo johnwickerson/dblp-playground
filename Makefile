@@ -38,7 +38,7 @@ myqueries:
 	echo "Longest POPL holiday:"
 	FIRST=5 CONF=POPL make findHolidays
 	echo "Longest PLDI holiday:"
-	FIRST=5 CONF=POPL make findHolidays
+	FIRST=5 CONF=PLDI make findHolidays
 	echo "Longest POPL career:"
 	FIRST=5 CONF=POPL make findLongestCareer
 	echo "Longest PLDI career:"
