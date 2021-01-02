@@ -16,7 +16,10 @@ clean:
 	echo "Deleting existing database"
 	dropdb --if-exists dblp
 	echo "Delete existing TSV files"
-	rm -f *.tsv
+	rm -f papers*.tsv
+	rm -f authors*.tsv
+	rm -f writtenBy*.tsv
+	rm -f editedBy*.tsv
 	rm -rf tsv
 
 test:
