@@ -64,6 +64,12 @@ psql $DBLP -c "COPY authors FROM '$DIR/tsv/authors.tsv' delimiter E'\t'"
 psql $DBLP -c "COPY editedBy FROM '$DIR/tsv/editedBy.tsv' delimiter E'\t'"
 psql $DBLP -c "COPY writtenBy FROM '$DIR/tsv/writtenBy.tsv' delimiter E'\t'"
 
+echo "Removing intermediate TSV files"
+rm -f papers*.tsv
+rm -f authors*.tsv
+rm -f writtenBy*.tsv
+rm -f editedBy*.tsv
+
 echo "Create auxiliary tables"
 psql $DBLP -f tables.sql
 
