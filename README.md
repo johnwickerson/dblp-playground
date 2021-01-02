@@ -7,7 +7,7 @@ _Note: In what follows, I define a paper to be any entry in the proceedings that
 ### POPL
 
 rank  |      name         | count 
-------+--------------------+-------
+------|--------------------|-------
     1 | Benjamin C. Pierce |    24
     2 | Robert Harper 0001 |    21
     3 | Thomas W. Reps     |    18
@@ -18,7 +18,7 @@ rank  |      name         | count
 ### PLDI
 
  rank |      name           | count 
-------+---------------------+-------
+------|---------------------|-------
     1 | Alexander Aiken     |    30
     2 | Martin T. Vechev    |    21
     3 | Rastislav Bodík     |    18
@@ -29,7 +29,7 @@ rank  |      name         | count
 ### Both together
 
  rank |      name          | count 
-------+--------------------+-------
+------|--------------------|-------
     1 | Alexander Aiken    |    43
     2 | Martin C. Rinard   |    30
     3 | Shmuel Sagiv       |    29
@@ -58,7 +58,7 @@ _That is, the longest period between first paper and most recent paper._
 ### POPL
 
  rank |     name          | from  | to  | span 
-------+-------------------+------+------+------
+------|-------------------|------|------|------
     1 | Patrick Cousot    | 1977 | 2019 |   42
     2 | Philip Wadler     | 1980 | 2018 |   38
     2 | Thomas W. Reps    | 1981 | 2019 |   38
@@ -71,7 +71,7 @@ _That is, the longest period between first paper and most recent paper._
 ### PLDI
 
  rank |      name          | from  | to  | span 
-------+--------------------+------+------+------
+------|--------------------|------|------|------
     1 | Suresh Jagannathan | 1987 | 2019 |   32
     1 | John H. Reppy      | 1988 | 2020 |   32
     1 | Thomas W. Reps     | 1988 | 2020 |   32
@@ -88,7 +88,7 @@ _That is, the longest period between first paper and most recent paper._
 ### POPL
 
  rank |      name      | from | to | streak length 
-------+--------------------+-------+------+--------------
+------|--------------------|-------|------|--------------
     1 | Derek Dreyer       |  2009 | 2018 |           10
     2 | John C. Mitchell   |  1984 | 1992 |            9
     3 | Nikhil Swamy       |  2012 | 2019 |            8
@@ -98,7 +98,7 @@ _That is, the longest period between first paper and most recent paper._
 ### PLDI
 
  rank |    name     | from | to | streak length 
-------+-----------------+-------+------+--------------
+------|-----------------|-------|------|--------------
     1 | Alexander Aiken |  2011 | 2020 |           10
     2 | Sumit Gulwani   |  2008 | 2015 |            8
     2 | Alexander Aiken |  2001 | 2008 |            8
@@ -109,7 +109,7 @@ _That is, the longest period between first paper and most recent paper._
 ### POPL
 
  rank |       name        | year | papers 
-------+-----------------------+----------+-------
+------|-----------------------|----------|-------
     1 | Derek Dreyer          |     2020 |     4
     2 | Adam Chlipala         |     2015 |     3
     2 | Deian Stefan          |     2019 |     3
@@ -128,7 +128,7 @@ _That is, the longest period between first paper and most recent paper._
 ### PLDI
 
  rank |       name       | year | papers 
-------+----------------------+----------+-------
+------|----------------------|----------|-------
     1 | Martin T. Vechev     |     2018 |     4
     1 | Sumit Gulwani        |     2011 |     4
     2 | Andrew C. Myers      |     2015 |     3
