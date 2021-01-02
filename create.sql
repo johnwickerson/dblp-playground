@@ -1,5 +1,6 @@
 -- Author: unknown
 -- Retrieved from http://agdb.informatik.uni-bremen.de/dblp/statistics.php
+-- Modified by: John Wickerson
 
 DROP TABLE if EXISTS writtenBy;
 DROP TABLE if EXISTS editedBy;

@@ -4,21 +4,19 @@
 # Retrieved from http://agdb.informatik.uni-bremen.de/dblp/statistics.php
 # Modified in January 2021 by John Wickerson
 
-DBLP=$1
-
 # Abort if any command fails
 set -e
 
 DIR="$( pwd )"
 
 echo "Creating new blank database"
-createdb $DBLP encoding='UTF8'
+createdb dblp encoding='UTF8'
 
 echo "Creating database structure"
-psql $DBLP -f create.sql
+psql dblp -f create.sql
 
 echo "Converting XML files to TSV files. Beware; this takes AGES."
-python dblp-xml-to-tsv.py ../dblp.xml
+python dblp-xml-to-tsv.py dblp.xml
 
 function escapeQuotes {
     cat $1 | sed -e 's/\"/\\\"/g'
@@ -59,10 +57,10 @@ mv editedBy4.tsv tsv/editedBy.tsv
 mv lengths.tsv tsv/lengths.tsv
 
 echo "Load data into the database"
-psql $DBLP -c "COPY papersOriginal FROM '$DIR/tsv/papers.tsv' delimiter E'\t'"
-psql $DBLP -c "COPY authors FROM '$DIR/tsv/authors.tsv' delimiter E'\t'"
-psql $DBLP -c "COPY editedBy FROM '$DIR/tsv/editedBy.tsv' delimiter E'\t'"
-psql $DBLP -c "COPY writtenBy FROM '$DIR/tsv/writtenBy.tsv' delimiter E'\t'"
+psql dblp -c "COPY papersOriginal FROM '$DIR/tsv/papers.tsv' delimiter E'\t'"
+psql dblp -c "COPY authors FROM '$DIR/tsv/authors.tsv' delimiter E'\t'"
+psql dblp -c "COPY editedBy FROM '$DIR/tsv/editedBy.tsv' delimiter E'\t'"
+psql dblp -c "COPY writtenBy FROM '$DIR/tsv/writtenBy.tsv' delimiter E'\t'"
 
 echo "Removing intermediate TSV files"
 rm -f papers*.tsv
@@ -71,7 +69,7 @@ rm -f writtenBy*.tsv
 rm -f editedBy*.tsv
 
 echo "Create auxiliary tables"
-psql $DBLP -f tables.sql
+psql dblp -f tables.sql
 
 echo "Create table of 'CORE' people"
-psql $DBLP -c "CREATE TABLE corePeople (fullName varchar(100), area varchar(10)); COPY corePeople FROM '$DIR/../core_people.tsv' delimiter E'\t'"
+psql dblp -c "CREATE TABLE corePeople (fullName varchar(100), area varchar(10)); COPY corePeople FROM '$DIR/core_people.tsv' delimiter E'\t'"
