@@ -1,7 +1,7 @@
 # Author: John Wickerson
 # Date: 02-January-2021
 
-all: dblp.xml
+all: dblp.xml dblp.dtd
 	./build_db.sh
 
 dblp.xml.gz:
@@ -11,6 +11,9 @@ dblp.xml.gz:
 dblp.xml: dblp.xml.gz
 	echo "Unzipping XML dump"
 	gunzip -k dblp.xml.gz
+
+dblp.dtd:
+	wget http://dblp.org/xml/dblp.dtd
 
 clean:
 	echo "Deleting existing database"
