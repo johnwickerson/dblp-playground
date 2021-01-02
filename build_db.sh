@@ -68,8 +68,8 @@ rm -f authors*.tsv
 rm -f writtenBy*.tsv
 rm -f editedBy*.tsv
 
-echo "Create auxiliary tables"
+echo "Creating auxiliary tables"
 psql dblp -f tables.sql
 
-echo "Create table of 'CORE' people"
+echo "Creating table of 'CORE' people"
 psql dblp -c "CREATE TABLE corePeople (fullName varchar(100), area varchar(10)); COPY corePeople FROM '$DIR/core_people.tsv' delimiter E'\t'"
