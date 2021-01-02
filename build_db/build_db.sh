@@ -1,4 +1,9 @@
 #!/bin/sh
+
+# Original author: unknown
+# Retrieved from http://agdb.informatik.uni-bremen.de/dblp/statistics.php
+# Modified in January 2021 by John Wickerson
+
 DBLP=$1
 
 # Abort if any command fails

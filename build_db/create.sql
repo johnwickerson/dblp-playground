@@ -1,3 +1,6 @@
+-- Author: unknown
+-- Retrieved from http://agdb.informatik.uni-bremen.de/dblp/statistics.php
+
 DROP TABLE if EXISTS writtenBy;
 DROP TABLE if EXISTS editedBy;
 DROP VIEW if EXISTS papers;

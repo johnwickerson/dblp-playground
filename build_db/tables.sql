@@ -1,3 +1,6 @@
+-- Author: unknown
+-- Retrieved from http://agdb.informatik.uni-bremen.de/dblp/statistics.php
+
 DROP TABLE if EXISTS authorPairs;
 
 CREATE index completeWrittenBy ON writtenBy(pid, aid, apos);

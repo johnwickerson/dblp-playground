@@ -1,3 +1,6 @@
+# Author: John Wickerson
+# Date: 02-January-2021
+
 DBLP=dblp
 
 all:
@@ -43,8 +46,8 @@ countUniqueCorePapers: #invoke like `CONF=ICFP AREA=TOP make countUniqueCorePape
 	DIR="$$( pwd )"; psql $(DBLP) -c "COPY corePeople FROM '$$DIR/../core_people.tsv' delimiter E'\t'"
 	psql $(DBLP) -c "SELECT count(DISTINCT pid) FROM corepeople JOIN fullpaperswithauthoraliases ON corepeople.fullname = fullpaperswithauthoraliases.fullname WHERE ((etype = 'inproceedings' AND booktitle = '$(CONF)') OR (etype = 'article' AND volnumber = '$(CONF)')) AND publYear BETWEEN 2015 AND 2020 AND area='$(AREA)'"
 
-countMostPapers: #invoke like `CONF=ICFP make countMostPapers`
-	psql $(DBLP) -c "SELECT fullname, count(publyear) FROM fullpaperswithauthors WHERE ((etype = 'inproceedings' AND booktitle = '$(CONF)') OR (etype = 'article' AND volnumber = '$(CONF)')) GROUP BY fullname ORDER BY count(publyear) DESC"
+countMostPapers: #invoke like `CONF=\'PLDI\',\'POPL\' make countMostPapers`
+	psql $(DBLP) -c "SELECT fullname, count(publyear) FROM fullpaperswithauthors WHERE ((etype = 'inproceedings' AND booktitle IN ($(CONF))) OR (etype = 'article' AND volnumber IN ($(CONF)))) GROUP BY fullname ORDER BY count(publyear) DESC"
 
 countMostConfs: #invoke like `CONF=PLDI make countMostConfs`
 	psql $(DBLP) -c "SELECT fullname, count(DISTINCT publyear) FROM fullpaperswithauthors WHERE ((etype = 'inproceedings' AND booktitle = '$(CONF)') OR (etype = 'article' AND volnumber = '$(CONF)')) GROUP BY fullname ORDER BY count(publyear) DESC"

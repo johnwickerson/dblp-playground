@@ -1,3 +1,6 @@
+# Author: unknown
+# Retrieved from http://agdb.informatik.uni-bremen.de/dblp/statistics.php
+
 import xml.sax
 import codecs
 import sys
