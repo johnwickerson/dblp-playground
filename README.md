@@ -2,6 +2,8 @@
 
 _Note: In what follows, I define a paper to be any entry in the proceedings that is at least four pages long. This slightly coarse rule means that some very short but legitimate papers may not get counted. There may also be a small number of entries that are not legitimate papers, such as extended tributes or announcements, but which get counted anyway._
 
+Last updated: 2-Jan-2021, to include up to POPL 2020 and PLDI 2020.
+
 ## Most papers
 
 ### POPL
