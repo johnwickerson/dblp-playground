@@ -10,7 +10,7 @@ Last update: 2-Jan-2021.
 <details>
 <summary>Click to expand.</summary>
 
-Testing testing.
+<p>Testing _testing_.
 
 rank  |  name | count 
 ------|--------------------|-------
@@ -21,7 +21,7 @@ rank  |  name | count
 4 | Matthias Felleisen |16
 5 | Shmuel Sagiv   |15
 
-Testing testing
+Testing testing</p>
 
 </details>
 
