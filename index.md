@@ -7,6 +7,8 @@ Last update: 2-Jan-2021.
 ## Most papers
 
 ### POPL
+<details>
+  <summary>Click to expand.</summary>
 
 rank  |  name | count 
 ------|--------------------|-------
@@ -16,6 +18,8 @@ rank  |  name | count
 3 | Derek Dreyer   |18
 4 | Matthias Felleisen |16
 5 | Shmuel Sagiv   |15
+
+</details>
 
 ### PLDI
 
