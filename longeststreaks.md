@@ -18,3 +18,22 @@
 2 | Sumit Gulwani   |  2008 | 2015 |8
 2 | Alexander Aiken |  2001 | 2008 |8
 3 | Isil Dillig |  2014 | 2020 |7
+
+### ICFP
+
+ rank |   name| from | to | streak length 
+------|-----------------------|------|------|--------------
+1 | Simon L. Peyton Jones |  2003 | 2010 |8
+2 | Derek Dreyer  |  2007 | 2013 |7
+3 | Simon L. Peyton Jones |  2012 | 2016 |5
+3 | Amal Ahmed|  2015 | 2019 |5
+
+### OOPSLA
+
+ rank |   name   | from | to | streak length 
+------|----------------------|------|------|--------------
+1 | Zhendong Su  |  2010 | 2016 |7
+2 | Xiangyu Zhang 0001   |  2011 | 2016 |6
+2 | Matthew Arnold   |  2005 | 2010 |6
+3 | Armando Solar-Lezama |  2016 | 2020 |5
+3 | Richard Helm |  1991 | 1995 |5

@@ -35,22 +35,44 @@ myqueries:
 	FIRST=5 CONF=\'PLDI\' make countMostPapers
 	echo "Most POPL and PLDI papers:"
 	FIRST=5 CONF=\'PLDI\',\'POPL\' make countMostPapers
+	echo "Most ICFP papers:"
+	FIRST=5 CONF=\'ICFP\' make countMostPapers
+	echo "Most OOPSLA papers:"
+	FIRST=5 CONF=\'OOPSLA\' make countMostPapers
+	echo "Most POPL, PLDI, ICFP, and OOPSLA papers:"
+	FIRST=5 CONF=\'PLDI\',\'POPL\',\'ICFP\',\'OOPSLA\' make countMostPapers
 	echo "Longest POPL holiday:"
 	FIRST=5 CONF=POPL make findHolidays
 	echo "Longest PLDI holiday:"
 	FIRST=5 CONF=PLDI make findHolidays
+	echo "Longest ICFP holiday:"
+	FIRST=5 CONF=ICFP make findHolidays
+	echo "Longest OOPSLA holiday:"
+	FIRST=5 CONF=OOPSLA make findHolidays
 	echo "Longest POPL career:"
 	FIRST=5 CONF=POPL make findLongestCareer
 	echo "Longest PLDI career:"
 	FIRST=5 CONF=PLDI make findLongestCareer
+	echo "Longest ICFP career:"
+	FIRST=5 CONF=ICFP make findLongestCareer
+	echo "Longest OOPSLA career:"
+	FIRST=5 CONF=OOPSLA make findLongestCareer
 	echo "Longest POPL streak:"
 	FIRST=3 CONF=POPL make findStreaks
 	echo "Longest PLDI streak:"
 	FIRST=3 CONF=PLDI make findStreaks
+	echo "Longest ICFP streak:"
+	FIRST=3 CONF=ICFP make findStreaks
+	echo "Longest OOPSLA streak:"
+	FIRST=3 CONF=OOPSLA make findStreaks
 	echo "Most POPL papers per conference:"
 	FIRST=2 CONF=POPL make findMostPapersPerConf
 	echo "Most PLDI papers per conference:"
 	FIRST=2 CONF=PLDI make findMostPapersPerConf
+	echo "Most ICFP papers per conference:"
+	FIRST=2 CONF=ICFP make findMostPapersPerConf
+	echo "Most OOPSLA papers per conference:"
+	FIRST=2 CONF=OOPSLA make findMostPapersPerConf
 
 firstalpha: #invoke like `CONF=POPL make firstalpha`
 	psql dblp -c "SELECT title, publyear FROM fullpapers WHERE ((etype = 'inproceedings' AND booktitle = '$(CONF)') OR (etype = 'article' AND volnumber = '$(CONF)')) ORDER BY title ASC"

@@ -40,3 +40,38 @@
 2 | Rastislav Bodík  | 2007 | 3
 2 | Rastislav Bodík  | 2005 | 3
 2 | Thomas W. Reps   | 2020 | 3
+
+### ICFP
+
+ rank |name| year | papers 
+------|--------------------------------|----------|-------
+1 | Matthew Fluet  | 2008 | 3
+1 | Neelakantan R. Krishnaswami| 2013 | 3
+1 | Simon L. Peyton Jones  | 2020 | 3
+1 | Éric Tanter| 2019 | 3
+
+### OOPSLA
+
+ rank |   name   | year | papers 
+------|----------------------|----------|-------
+1 | Eran Yahav   | 2011 | 4
+1 | Eran Yahav   | 2020 | 4
+1 | Nobuko Yoshida   | 2020 | 4
+1 | Sam Tobin-Hochstadt  | 2012 | 4
+2 | Daniel G. Bobrow | 1986 | 3
+2 | David M. Ungar   | 1994 | 3
+2 | Dennis de Champeaux  | 1992 | 3
+2 | Guannan Wei  | 2019 | 3
+2 | Hila Peleg   | 2020 | 3
+2 | James Noble 0001 | 2006 | 3
+2 | Jan Vitek| 2020 | 3
+2 | Kathryn S. McKinley  | 2013 | 3
+2 | Kathryn S. McKinley  | 2007 | 3
+2 | Kenneth M. Kahn  | 1986 | 3
+2 | Koushik Sen  | 2019 | 3
+2 | Magnus Madsen| 2020 | 3
+2 | Martin Odersky   | 2014 | 3
+2 | Martin T. Vechev | 2011 | 3
+2 | Michael D. Ernst | 2012 | 3
+2 | Ondrej Lhoták| 2020 | 3
+2 | Rupak Majumdar   | 2020 | 3
