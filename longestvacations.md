@@ -54,3 +54,14 @@ _That is, the longest gap between successive papers._
 5 | Philip Wadler  |  1999 | 2018 |  19
 5 | David Garlan   |  1987 | 2006 |  19
 5 | Atanas Rountev |  2001 | 2020 |  19
+
+### POPL, PLDI, ICFP, and OOPSLA
+
+ rank |  name   | from | to | gap 
+------|---------------------|-----------|----------|-----
+1 | Philip A. Bernstein |  1979 | 2017 |  38
+2 | Dennis E. Shasha|  1984 | 2018 |  34
+3 | Val Tannen  |  1987 | 2019 |  32
+4 | Peter B. Kessler|  1990 | 2019 |  29
+5 | Brad A. Myers   |  1992 | 2020 |  28
+5 | Alan Mycroft|  1986 | 2014 |  28
