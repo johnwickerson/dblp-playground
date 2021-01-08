@@ -46,3 +46,5 @@
 1 | Derek Dreyer | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |4
 1 | Viktor Vafeiadis| OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |4
 1 | Matthew Might   | OOPSLA 2015, POPL 2016, PLDI 2016, ICFP 2016 |4
+
+(Note: It would appear that a necessary condition for having a long SIGPLAN streak is having an alliterative name.)
