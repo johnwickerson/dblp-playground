@@ -37,3 +37,12 @@
 2 | Matthew Arnold   |  2005 | 2010 |6
 3 | Armando Solar-Lezama |  2016 | 2020 |5
 3 | Richard Helm |  1991 | 1995 |5
+
+### POPL, PLDI, ICFP, and OOPSLA
+
+ rank |name | streak  | length 
+-----|-------------------------------------|------|-------------------
+1 | Alexander Aiken | POPL 2005, PLDI 2005, ICFP 2005, OOPSLA 2005 | 4
+1 | Derek Dreyer | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |4
+1 | Viktor Vafeiadis| OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |4
+1 | Matthew Might   | OOPSLA 2015, POPL 2016, PLDI 2016, ICFP 2016 |4
