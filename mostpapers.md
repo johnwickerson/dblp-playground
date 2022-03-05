@@ -2,79 +2,73 @@
 
 ### POPL
 
-rank  |  name | count 
+ rank |        name        | count 
 ------|--------------------|-------
-1 | Benjamin C. Pierce |24
-2 | Robert Harper 0001 |21
-3 | Thomas W. Reps |18
-3 | Derek Dreyer   |18
-4 | Matthias Felleisen |16
-5 | Shmuel Sagiv   |15
+    1 | Benjamin C. Pierce |    24
+    2 | Derek Dreyer       |    22
+    2 | Robert Harper 0001 |    22
+    3 | Thomas W. Reps     |    20
+    4 | Viktor Vafeiadis   |    17
+    4 | Shmuel Sagiv       |    17
+    5 | Matthias Felleisen |    16
 
 ### PLDI
 
- rank |  name   | count 
-------|---------------------|-------
-1 | Alexander Aiken |30
-2 | Martin T. Vechev|21
-3 | Rastislav Bodík |18
-3 | Martin C. Rinard|18
-4 | Sumit Gulwani   |17
-5 | Kathryn S. McKinley |16
+ rank |       name       | count 
+------|------------------|-------
+    1 | Alexander Aiken  |    31
+    2 | Martin T. Vechev |    25
+    3 | Martin C. Rinard |    19
+    4 | Rastislav Bodík  |    18
+    5 | Sumit Gulwani    |    17
+    5 | Isil Dillig      |    17
 
 ### POPL and PLDI
 
- rank |  name  | count 
-------|--------------------|-------
-1 | Alexander Aiken|43
-2 | Martin C. Rinard   |30
-3 | Shmuel Sagiv   |29
-3 | Martin T. Vechev   |29
-4 | Thomas W. Reps |28
-4 | Sumit Gulwani  |28
-5 | Rastislav Bodík|25
-5 | Robert Harper 0001 |25
+ rank |       name       | count 
+------|------------------|-------
+    1 | Alexander Aiken  |    45
+    2 | Martin T. Vechev |    34
+    3 | Martin C. Rinard |    32
+    3 | Thomas W. Reps   |    32
+    4 | Shmuel Sagiv     |    31
+    5 | Sumit Gulwani    |    28
 
 ### ICFP
 
- rank |   name| count 
+ rank |         name          | count 
 ------|-----------------------|-------
-1 | Simon L. Peyton Jones |33
-2 | Stephanie Weirich |14
-3 | Derek Dreyer  |13
-4 | Dimitrios Vytiniotis  |12
-5 | Matthias Felleisen|10
-5 | Ralf Hinze|10
-5 | Benjamin C. Pierce|10
-5 | David Walker  |10
-5 | Matthew Fluet |10
-5 | François Pottier  |10
+    1 | Simon L. Peyton Jones |    33
+    2 | Stephanie Weirich     |    16
+    3 | Derek Dreyer          |    14
+    4 | Dimitrios Vytiniotis  |    12
+    5 | David Walker          |    11
+    5 | Lars Birkedal         |    11
+    5 | Matthias Felleisen    |    11
 
 ### OOPSLA
 
- rank |  name   | count 
+ rank |        name         | count 
 ------|---------------------|-------
-1 | Kathryn S. McKinley |22
-2 | Jan Vitek   |21
-3 | Mira Mezini |16
-4 | Frank Tip   |15
-5 | Martin Odersky  |13
-5 | J. Eliot B. Moss|13
-5 | Martin C. Rinard|13
-5 | Zhendong Su |13
-5 | Yannis Smaragdakis  |13
-5 | David M. Ungar  |13
+    1 | Jan Vitek           |    24
+    2 | Kathryn S. McKinley |    22
+    3 | Mira Mezini         |    16
+    3 | Frank Tip           |    16
+    4 | Yannis Smaragdakis  |    15
+    4 | Zhendong Su 0001    |    15
+    5 | David M. Ungar      |    13
+    5 | Martin Odersky      |    13
+    5 | Martin C. Rinard    |    13
+    5 | J. Eliot B. Moss    |    13
 
 ### POPL, PLDI, ICFP, and OOPSLA
 
- rank |   name| count 
+ rank |         name          | count 
 ------|-----------------------|-------
-1 | Simon L. Peyton Jones |56
-2 | Alexander Aiken   |55
-3 | Martin C. Rinard  |43
-4 | Martin T. Vechev  |40
-4 | Matthias Felleisen|40
-4 | Shmuel Sagiv  |40
-4 | Kathryn S. McKinley   |40
-5 | Benjamin C. Pierce|37
-5 | Sumit Gulwani |37
+    1 | Simon L. Peyton Jones |    58
+    2 | Alexander Aiken       |    57
+    3 | Martin T. Vechev      |    45
+    3 | Martin C. Rinard      |    45
+    4 | Derek Dreyer          |    42
+    4 | Shmuel Sagiv          |    42
+    5 | Matthias Felleisen    |    41

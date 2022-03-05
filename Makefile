@@ -2,6 +2,13 @@
 # Date: 02-January-2021
 
 all: dblp.xml dblp.dtd
+	@echo "Creating new blank database"
+	createdb dblp encoding='UTF8'
+	@echo "Creating database structure"
+	psql dblp -f create.sql
+	@echo "Converting XML files to TSV files. Beware; this takes AGES."
+	python dblp-xml-to-tsv.py dblp.xml
+	./make_tsvs.sh
 	./build_db.sh
 
 clean:
@@ -65,6 +72,8 @@ myqueries:
 	FIRST=3 CONF=ICFP make findStreaks
 	echo "Longest OOPSLA streak:"
 	FIRST=3 CONF=OOPSLA make findStreaks
+	echo "Longest SIGPLAN streak:"
+	FIRST=5 make findSigplanStreaks
 	echo "Most POPL papers per conference:"
 	FIRST=2 CONF=POPL make findMostPapersPerConf
 	echo "Most PLDI papers per conference:"

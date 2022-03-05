@@ -6,9 +6,9 @@ This repo contains some code for converting the DBLP XML dump into a PostgreSQL 
 
 Note: I've only tested this on my Mac. I think PostgreSQL tends to be configured a little differently on Linux.
 
-0. System requirements: PostgreSQL (`brew install postgresql`).
+0. System requirements: PostgreSQL (`brew install postgresql`), wget (`brew install wget`), GNU's sed (`brew install gnu-sed`).
 
-1. Start your PostgreSQL server using `pg_ctl -D /usr/local/var/postgres start`. There are further instructions about getting started with PostgreSQL on [this webpage](https://www.robinwieruch.de/postgres-sql-macos-setup).
+1. Start your PostgreSQL server using `pg_ctl -D /opt/homebrew/var/postgres start`. There are further instructions about getting started with PostgreSQL on [this webpage](https://www.robinwieruch.de/postgres-sql-macos-setup).
 
 2. Run `make`. This downloads the DBLP XML dump from `http://dblp.org/xml/dblp.xml.gz`, unzips it into `dblp.xml`, and then converts it into a PostgreSQL database. Caution: the DBLP XML dump is quite a large file, and converting it into a database took me about half an hour.
 
