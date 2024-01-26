@@ -41,10 +41,12 @@ _That is, the longest gap between successive papers._
 
  rank |name| from |to| gap 
 ------|--------------------|------|------|-----
-1 | Brad A. Myers      | 1992 | 2020 |  28
-2 | Susan Eisenbach    | 1998 | 2022 |  24
-3 | Gail E. Kaiser     | 1992 | 2014 |  22
-3 | Henry Lieberman    | 1988 | 2010 |  22
-4 | Alan Borning       | 1994 | 2015 |  21
-4 | Stephen N. Freund  | 1999 | 2020 |  21
-5 | Benjamin C. Pierce | 1999 | 2019 |  20
+1 | Brad A. Myers    | 1988 | 2020 |   32
+2 | Jens Palsberg    | 1989 | 2019 |   30
+2 | J. Eliot B. Moss | 1989 | 2019 |   30
+3 | Alan Borning     | 1987 | 2015 |   28
+4 | Joseph Gil       | 1996 | 2023 |   27
+4 | Gail E. Kaiser   | 1987 | 2014 |   27
+4 | William R. Cook  | 1989 | 2016 |   27
+4 | Gregor Kiczales  | 1986 | 2013 |   27
+5 | Jan Vitek        | 1997 | 2023 |   26
