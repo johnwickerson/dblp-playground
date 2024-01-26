@@ -39,21 +39,30 @@
  rank | name | from |to| streaklength 
 ------|----------------------|------|------|--------------
 1 | Zhendong Su          | 2010 | 2016 |            7
+1 | Isil Dillig          | 2017 | 2023 |            7
 2 | Xiangyu Zhang        | 2011 | 2016 |            6
+2 | Saman P. Amarasinghe | 2017 | 2022 |            6
 2 | Matthew Arnold       | 2005 | 2010 |            6
 3 | Armando Solar-Lezama | 2016 | 2020 |            5
 3 | Jan Vitek            | 2017 | 2021 |            5
-3 | Isil Dillig          | 2017 | 2021 |            5
+3 | Arjun Radhakrishna   | 2019 | 2023 |            5
+3 | Viktor Vafeiadis     | 2018 | 2022 |            5
+3 | Zhendong Su 0001     | 2019 | 2023 |            5
+3 | Sumit Gulwani        | 2018 | 2022 |            5
+3 | Peter Müller         | 2019 | 2023 |            5
 3 | Richard Helm         | 1991 | 1995 |            5
-3 | Saman P. Amarasinghe | 2017 | 2021 |            5
 
 ### POPL, PLDI, ICFP, and OOPSLA
 
  rank |name | streak| length 
 -----|-------------------------------------|------|-------------------
-1 | Derek Dreyer                        | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
-1 | Jonathan Ragan-Kelley               | ICFP 2021, OOPSLA 2021, POPL 2022, PLDI 2022 |            4
-1 | Alexander Aiken                     | POPL 2005, PLDI 2005, ICFP 2005, OOPSLA 2005 |            4
-1 | Matthew Might                       | OOPSLA 2015, POPL 2016, PLDI 2016, ICFP 2016 |            4
-1 | Robbert Krebbers                    | ICFP 2020, OOPSLA 2020, POPL 2021, PLDI 2021 |            4
-1 | Viktor Vafeiadis                    | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
+1 | Lars Birkedal                  | ICFP 2022, OOPSLA 2022, POPL 2023, PLDI 2023, ICFP 2023, OOPSLA 2023, POPL 2024 |            7
+2 | Derek Dreyer                   | POPL 2022, PLDI 2022, ICFP 2022, OOPSLA 2022, POPL 2023 |            5
+2 | Robbert Krebbers               | POPL 2023, PLDI 2023, ICFP 2023, OOPSLA 2023, POPL 2024 |            5
+3 | Ranjit Jhala                   | PLDI 2023, ICFP 2023, OOPSLA 2023, POPL 2024 |            4
+3 | Derek Dreyer                   | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
+3 | Jonathan Ragan-Kelley          | ICFP 2021, OOPSLA 2021, POPL 2022, PLDI 2022 |            4
+3 | Viktor Vafeiadis               | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
+3 | Robbert Krebbers               | ICFP 2020, OOPSLA 2020, POPL 2021, PLDI 2021 |            4
+3 | Matthew Might                  | OOPSLA 2015, POPL 2016, PLDI 2016, ICFP 2016 |            4
+3 | Alexander Aiken                | POPL 2005, PLDI 2005, ICFP 2005, OOPSLA 2005 |            4
