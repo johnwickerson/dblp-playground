@@ -4,71 +4,73 @@
 
  rank |        name        | count 
 ------|--------------------|-------
-    1 | Benjamin C. Pierce |    24
-    2 | Derek Dreyer       |    22
-    2 | Robert Harper 0001 |    22
-    3 | Thomas W. Reps     |    20
-    4 | Viktor Vafeiadis   |    17
-    4 | Shmuel Sagiv       |    17
-    5 | Matthias Felleisen |    16
+1 | Derek Dreyer       |    24
+1 | Benjamin C. Pierce |    24
+2 | Robert Harper      |    23
+3 | Lars Birkedal      |    22
+3 | Thomas W. Reps     |    22
+4 | Viktor Vafeiadis   |    19
+5 | Matthias Felleisen |    17
+5 | Peter Sewell       |    17
+5 | Gilles Barthe      |    17
+5 | Shmuel Sagiv       |    17
 
 ### PLDI
 
  rank |       name       | count 
 ------|------------------|-------
-    1 | Alexander Aiken  |    31
-    2 | Martin T. Vechev |    25
-    3 | Martin C. Rinard |    19
-    4 | Rastislav Bodík  |    18
-    5 | Sumit Gulwani    |    17
-    5 | Isil Dillig      |    17
+1 | Alexander Aiken  |    33
+2 | Martin T. Vechev |    27
+3 | Rastislav Bodík  |    21
+4 | Martin C. Rinard |    20
+5 | Isil Dillig      |    19
 
 ### POPL and PLDI
 
  rank |       name       | count 
 ------|------------------|-------
-    1 | Alexander Aiken  |    45
-    2 | Martin T. Vechev |    34
-    3 | Martin C. Rinard |    32
-    3 | Thomas W. Reps   |    32
-    4 | Shmuel Sagiv     |    31
-    5 | Sumit Gulwani    |    28
+1 | Alexander Aiken  |    47
+2 | Martin T. Vechev |    36
+3 | Thomas W. Reps   |    34
+4 | Martin C. Rinard |    32
+5 | Derek Dreyer     |    31
+5 | Shmuel Sagiv     |    31
 
 ### ICFP
 
  rank |         name          | count 
 ------|-----------------------|-------
-    1 | Simon L. Peyton Jones |    33
-    2 | Stephanie Weirich     |    16
-    3 | Derek Dreyer          |    14
-    4 | Dimitrios Vytiniotis  |    12
-    5 | David Walker          |    11
-    5 | Lars Birkedal         |    11
-    5 | Matthias Felleisen    |    11
+1 | Simon L. Peyton Jones |    34
+2 | Stephanie Weirich     |    18
+3 | Nicolas Wu            |    15
+3 | Derek Dreyer          |    15
+4 | Lars Birkedal         |    13
+4 | Dimitrios Vytiniotis  |    13
+5 | Matthias Felleisen    |    12
+5 | Benjamin C. Pierce    |    12
 
 ### OOPSLA
 
  rank |        name         | count 
 ------|---------------------|-------
-    1 | Jan Vitek           |    24
-    2 | Kathryn S. McKinley |    22
-    3 | Mira Mezini         |    16
-    3 | Frank Tip           |    16
-    4 | Yannis Smaragdakis  |    15
-    4 | Zhendong Su 0001    |    15
-    5 | David M. Ungar      |    13
-    5 | Martin Odersky      |    13
-    5 | Martin C. Rinard    |    13
-    5 | J. Eliot B. Moss    |    13
+1 | Jan Vitek           |    24
+2 | Kathryn S. McKinley |    22
+3 | Frank Tip           |    16
+3 | Mira Mezini         |    16
+4 | Zhendong Su    |    15
+4 | Yannis Smaragdakis  |    15
+5 | Martin C. Rinard    |    13
+5 | Martin Odersky      |    13
+5 | J. Eliot B. Moss    |    13
+5 | David M. Ungar      |    13
 
 ### POPL, PLDI, ICFP, and OOPSLA
 
  rank |         name          | count 
 ------|-----------------------|-------
-    1 | Simon L. Peyton Jones |    58
-    2 | Alexander Aiken       |    57
-    3 | Martin T. Vechev      |    45
-    3 | Martin C. Rinard      |    45
-    4 | Derek Dreyer          |    42
-    4 | Shmuel Sagiv          |    42
-    5 | Matthias Felleisen    |    41
+1 | Alexander Aiken       |    59
+1 | Simon L. Peyton Jones |    59
+2 | Derek Dreyer          |    48
+3 | Martin T. Vechev      |    47
+4 | Martin C. Rinard      |    46
+5 | Matthias Felleisen    |    43
