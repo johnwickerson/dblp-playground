@@ -56,9 +56,13 @@
 
  rank |name | streak| length 
 -----|-------------------------------------|------|-------------------
-1 | Derek Dreyer                        | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
-1 | Jonathan Ragan-Kelley               | ICFP 2021, OOPSLA 2021, POPL 2022, PLDI 2022 |            4
-1 | Alexander Aiken                     | POPL 2005, PLDI 2005, ICFP 2005, OOPSLA 2005 |            4
-1 | Matthew Might                       | OOPSLA 2015, POPL 2016, PLDI 2016, ICFP 2016 |            4
-1 | Robbert Krebbers                    | ICFP 2020, OOPSLA 2020, POPL 2021, PLDI 2021 |            4
-1 | Viktor Vafeiadis                    | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
+1 | Lars Birkedal                  | ICFP 2022, OOPSLA 2022, POPL 2023, PLDI 2023, ICFP 2023, OOPSLA 2023, POPL 2024 |            7
+2 | Derek Dreyer                   | POPL 2022, PLDI 2022, ICFP 2022, OOPSLA 2022, POPL 2023 |            5
+2 | Robbert Krebbers               | POPL 2023, PLDI 2023, ICFP 2023, OOPSLA 2023, POPL 2024 |            5
+3 | Ranjit Jhala                   | PLDI 2023, ICFP 2023, OOPSLA 2023, POPL 2024 |            4
+3 | Derek Dreyer                   | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
+3 | Jonathan Ragan-Kelley          | ICFP 2021, OOPSLA 2021, POPL 2022, PLDI 2022 |            4
+3 | Viktor Vafeiadis               | OOPSLA 2014, POPL 2015, PLDI 2015, ICFP 2015 |            4
+3 | Robbert Krebbers               | ICFP 2020, OOPSLA 2020, POPL 2021, PLDI 2021 |            4
+3 | Matthew Might                  | OOPSLA 2015, POPL 2016, PLDI 2016, ICFP 2016 |            4
+3 | Alexander Aiken                | POPL 2005, PLDI 2005, ICFP 2005, OOPSLA 2005 |            4
