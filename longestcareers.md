@@ -55,8 +55,8 @@ _That is, the longest period between first paper and most recent paper._
 2 | Jens Palsberg    | 1989 | 2019 |   30
 2 | J. Eliot B. Moss | 1989 | 2019 |   30
 3 | Alan Borning     | 1987 | 2015 |   28
-4 | William R. Cook  | 1989 | 2016 |   27
+4 | Joseph Gil       | 1996 | 2023 |   27
 4 | Gail E. Kaiser   | 1987 | 2014 |   27
+4 | William R. Cook  | 1989 | 2016 |   27
 4 | Gregor Kiczales  | 1986 | 2013 |   27
-5 | Frank Tip        | 1996 | 2021 |   25
-5 | Andrew C. Myers  | 1995 | 2020 |   25
+5 | Jan Vitek        | 1997 | 2023 |   26
