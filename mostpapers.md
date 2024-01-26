@@ -53,24 +53,24 @@
 
  rank |        name         | count 
 ------|---------------------|-------
-1 | Jan Vitek           |    24
+1 | Jan Vitek           |    25
 2 | Kathryn S. McKinley |    22
-3 | Frank Tip           |    16
-3 | Mira Mezini         |    16
-4 | Zhendong Su    |    15
-4 | Yannis Smaragdakis  |    15
-5 | Martin C. Rinard    |    13
-5 | Martin Odersky      |    13
-5 | J. Eliot B. Moss    |    13
-5 | David M. Ungar      |    13
+3 | Isil Dillig         |    17
+3 | Zhendong Su         |    17
+4 | Frank Tip           |    16
+4 | Mira Mezini         |    16
+4 | Yannis Smaragdakis  |    16
+5 | Sumit Gulwani       |    14
+5 | Ondrej Lhoták       |    14
 
 ### POPL, PLDI, ICFP, and OOPSLA
 
  rank |         name          | count 
 ------|-----------------------|-------
-1 | Alexander Aiken       |    59
 1 | Simon L. Peyton Jones |    59
-2 | Derek Dreyer          |    48
+1 | Alexander Aiken       |    59
+2 | Derek Dreyer          |    54
 3 | Martin T. Vechev      |    47
+3 | Isil Dillig           |    47
 4 | Martin C. Rinard      |    46
-5 | Matthias Felleisen    |    43
+5 | Matthias Felleisen    |    44
