@@ -4,7 +4,7 @@
 
 _Note: In what follows, I define a paper to be any entry in the proceedings that is at least four pages long. This slightly coarse rule means that some very short but legitimate papers may not get counted. There may also be a small number of entries that are not legitimate papers, such as extended tributes or announcements, but which get counted anyway._
 
-**Last update: 26-Jan-2023 (up to and including POPL 2024)**
+**Last update: 26-Jan-2024 (up to and including POPL 2024)**
 
 * [Most papers](mostpapers.md)
 
