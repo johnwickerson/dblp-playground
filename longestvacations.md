@@ -42,11 +42,9 @@ _That is, the longest gap between successive papers._
  rank |name| from |to| gap 
 ------|--------------------|------|------|-----
 1 | Brad A. Myers      | 1992 | 2020 |  28
-2 | Henry Lieberman    | 1988 | 2010 |  22
-2 | Gail E. Kaiser     | 1992 | 2014 |  22
-3 | Stephen N. Freund  | 1999 | 2020 |  21
-3 | Alan Borning       | 1994 | 2015 |  21
-4 | Benjamin C. Pierce | 1999 | 2019 |  20
-5 | David Garlan       | 1987 | 2006 |  19
-5 | Philip Wadler      | 1999 | 2018 |  19
-5 | Atanas Rountev     | 2001 | 2020 |  19
+2 | Susan Eisenbach    | 1998 | 2022 |  24
+3 | Gail E. Kaiser     | 1992 | 2014 |  22
+3 | Henry Lieberman    | 1988 | 2010 |  22
+4 | Alan Borning       | 1994 | 2015 |  21
+4 | Stephen N. Freund  | 1999 | 2020 |  21
+5 | Benjamin C. Pierce | 1999 | 2019 |  20
