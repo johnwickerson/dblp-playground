@@ -32,7 +32,7 @@ _That is, the longest gap between successive papers._
 2 | John Longley        | 1999 | 2020 |  21
 3 | Flemming Nielson    | 1997 | 2017 |  20
 3 | Hanne Riis Nielson  | 1997 | 2017 |  20
-3 | Scott F. Smith 0001 | 2000 | 2020 |  20
+3 | Scott F. Smith      | 2000 | 2020 |  20
 4 | Hideya Iwasaki      | 1997 | 2016 |  19
 5 | Frank Pfenning      | 2000 | 2017 |  17
 5 | Alan Jeffrey        | 1996 | 2013 |  17

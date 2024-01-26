@@ -29,7 +29,7 @@ _That is, the longest period between first paper and most recent paper._
 
  rank | name| from |to| span 
 ------|-----------------------|------|------|------
-1 | Peter Thiemann 0001   | 1996 | 2023 |   27
+1 | Peter Thiemann        | 1996 | 2023 |   27
 1 | Simon L. Peyton Jones | 1996 | 2023 |   27
 2 | Olin Shivers          | 1997 | 2023 |   26
 2 | Koen Claessen         | 1997 | 2023 |   26

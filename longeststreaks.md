@@ -38,8 +38,8 @@
 
  rank | name | from |to| streaklength 
 ------|----------------------|------|------|--------------
-1 | Zhendong Su 0001     | 2010 | 2016 |            7
-2 | Xiangyu Zhang 0001   | 2011 | 2016 |            6
+1 | Zhendong Su          | 2010 | 2016 |            7
+2 | Xiangyu Zhang        | 2011 | 2016 |            6
 2 | Matthew Arnold       | 2005 | 2010 |            6
 3 | Armando Solar-Lezama | 2016 | 2020 |            5
 3 | Jan Vitek            | 2017 | 2021 |            5

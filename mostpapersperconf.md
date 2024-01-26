@@ -27,9 +27,9 @@
 2 | Loris D'Antoni        | 2020 |      3
 2 | Martin T. Vechev      | 2020 |      3
 2 | Martin T. Vechev      | 2012 |      3
-2 | Milind Kulkarni 0001  | 2019 |      3
-2 | Peter Lee 0001        | 1998 |      3
-2 | Rahul Sharma 0001     | 2016 |      3
+2 | Milind Kulkarni       | 2019 |      3
+2 | Peter Lee             | 1998 |      3
+2 | Rahul Sharma          | 2016 |      3
 2 | Rastislav Bodík       | 2005 |      3
 2 | Rastislav Bodík       | 2007 |      3
 2 | Thomas W. Reps        | 2020 |      3
@@ -55,9 +55,9 @@
 2 | Daniel G. Bobrow     | 1986 |      3
 2 | David M. Ungar       | 1994 |      3
 2 | Dennis de Champeaux  | 1992 |      3
-2 | Guannan Wei 0001     | 2019 |      3
+2 | Guannan Wei          | 2019 |      3
 2 | Hila Peleg           | 2020 |      3
-2 | James Noble 0001     | 2006 |      3
+2 | James Noble          | 2006 |      3
 2 | Jan Vitek            | 2020 |      3
 2 | Jan Vitek            | 2021 |      3
 2 | John Wickerson       | 2021 |      3
@@ -74,8 +74,8 @@
 2 | Saman P. Amarasinghe | 2018 |      3
 2 | Shmuel Sagiv         | 2011 |      3
 2 | Sumit Gulwani        | 2021 |      3
-2 | Uri Alon 0002        | 2020 |      3
+2 | Uri Alon             | 2020 |      3
 2 | Viktor Kuncak        | 2015 |      3
 2 | Wilf R. LaLonde      | 1988 |      3
 2 | Yannis Smaragdakis   | 2013 |      3
-2 | Zhendong Su 0001     | 2020 |      3
+2 | Zhendong Su          | 2020 |      3
