@@ -39,13 +39,18 @@
  rank | name | from |to| streaklength 
 ------|----------------------|------|------|--------------
 1 | Zhendong Su          | 2010 | 2016 |            7
+1 | Isil Dillig          | 2017 | 2023 |            7
 2 | Xiangyu Zhang        | 2011 | 2016 |            6
+2 | Saman P. Amarasinghe | 2017 | 2022 |            6
 2 | Matthew Arnold       | 2005 | 2010 |            6
 3 | Armando Solar-Lezama | 2016 | 2020 |            5
 3 | Jan Vitek            | 2017 | 2021 |            5
-3 | Isil Dillig          | 2017 | 2021 |            5
+3 | Arjun Radhakrishna   | 2019 | 2023 |            5
+3 | Viktor Vafeiadis     | 2018 | 2022 |            5
+3 | Zhendong Su 0001     | 2019 | 2023 |            5
+3 | Sumit Gulwani        | 2018 | 2022 |            5
+3 | Peter Müller         | 2019 | 2023 |            5
 3 | Richard Helm         | 1991 | 1995 |            5
-3 | Saman P. Amarasinghe | 2017 | 2021 |            5
 
 ### POPL, PLDI, ICFP, and OOPSLA
 
