@@ -7,7 +7,7 @@ all: dblp.xml dblp.dtd
 	@echo "Creating database structure"
 	psql dblp -f create.sql
 	@echo "Converting XML files to TSV files. Beware; this takes AGES."
-	python dblp-xml-to-tsv.py dblp.xml
+	python2 dblp-xml-to-tsv.py dblp.xml
 	./make_tsvs.sh
 	./build_db.sh
 

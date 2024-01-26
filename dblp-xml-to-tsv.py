@@ -79,12 +79,12 @@ class DBLPXMLHANDLER(xml.sax.ContentHandler):
                 self.authorCounter += 1
                 authorName = self.cval.split()
                 authorFirstName =""
-                for x in xrange(len(authorName) - 1):
+                for x in range(len(authorName) - 1):
                     authorFirstName += authorName[x] 
                     if x<(len(authorName)-1):
                         authorFirstName += " "
                 authorLastName = authorName[len(authorName) - 1]
-                if authorFirstName is " ":
+                if authorFirstName == " ":
                     authorFirstName = "\N"
                 if len(authorFirstName) > authorFirstNameLength:
                     authorFirstNameLength = len(authorFirstName)
