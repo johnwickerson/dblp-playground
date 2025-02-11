@@ -16,37 +16,34 @@ _That is, the longest gap between successive papers._
 
  rank | name| from |to| gap 
 ------|-------------------|------|------|-----
-1 | Barbara Liskov    | 1988 | 2015 |  27
-2 | Roland H. C. Yap  | 1992 | 2018 |  26
-2 | Gagan Agrawal     | 1995 | 2021 |  26
-3 | Joxan Jaffar      | 1992 | 2015 |  23
-4 | Olivier Tardieu   | 2001 | 2023 |  22
-4 | M. Frans Kaashoek | 1997 | 2019 |  22
-5 | Edith Schonberg   | 1989 | 2010 |  21
+1 | Peter J. Stuckey | 1992 | 2024 |  32
+2 | Srini Devadas    | 1995 | 2024 |  29
+3 | Barbara Liskov   | 1988 | 2015 |  27
+4 | Gagan Agrawal    | 1995 | 2021 |  26
+4 | Roland H. C. Yap | 1992 | 2018 |  26
+5 | Joxan Jaffar     | 1992 | 2015 |  23
 
 ### ICFP
 
  rank |name | from |to| gap 
 ------|---------------------|------|------|-----
 1 | Lennart Augustsson  | 1998 | 2023 |  25
-2 | John Longley        | 1999 | 2020 |  21
-3 | Flemming Nielson    | 1997 | 2017 |  20
-3 | Hanne Riis Nielson  | 1997 | 2017 |  20
-3 | Scott F. Smith      | 2000 | 2020 |  20
-4 | Hideya Iwasaki      | 1997 | 2016 |  19
-5 | Frank Pfenning      | 2000 | 2017 |  17
-5 | Alan Jeffrey        | 1996 | 2013 |  17
+2 | Wei-Ngan Chin       | 2001 | 2024 |  23
+3 | John Longley        | 1999 | 2020 |  21
+4 | Scott F. Smith 0001 | 2000 | 2020 |  20
+4 | Flemming Nielson    | 1997 | 2017 |  20
+4 | Hanne Riis Nielson  | 1997 | 2017 |  20
+5 | Hideya Iwasaki      | 1997 | 2016 |  19
 
 ### OOPSLA
 
  rank |name| from |to| gap 
 ------|--------------------|------|------|-----
-1 | Brad A. Myers    | 1988 | 2020 |   32
-2 | Jens Palsberg    | 1989 | 2019 |   30
-2 | J. Eliot B. Moss | 1989 | 2019 |   30
-3 | Alan Borning     | 1987 | 2015 |   28
-4 | Joseph Gil       | 1996 | 2023 |   27
-4 | Gail E. Kaiser   | 1987 | 2014 |   27
-4 | William R. Cook  | 1989 | 2016 |   27
-4 | Gregor Kiczales  | 1986 | 2013 |   27
-5 | Jan Vitek        | 1997 | 2023 |   26
+1 | Brad A. Myers      | 1992 | 2020 |  28
+2 | Vijay Sundaresan   | 2000 | 2024 |  24
+2 | Susan Eisenbach    | 1998 | 2022 |  24
+3 | Gail E. Kaiser     | 1992 | 2014 |  22
+3 | Henry Lieberman    | 1988 | 2010 |  22
+4 | Stephen N. Freund  | 1999 | 2020 |  21
+4 | Alan Borning       | 1994 | 2015 |  21
+5 | Benjamin C. Pierce | 1999 | 2019 |  20
