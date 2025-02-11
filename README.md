@@ -30,7 +30,7 @@ _Note: I've only tested this on my Mac. I think PostgreSQL tends to be configure
 
 3. Run `make myqueries`. See the Makefile for the gory details.
 
-## DBLP SPARQL
+## A note about DBLP SPARQL
 
 DBLP has recently released a service that allows you to explore its database using custom queries written in SPARQL. For instance, [here](https://sparql.dblp.org/paAxUo) is a query that asks "Who has the most POPL/PLDI/OOPSLA/ICFP papers?" However, it's hard to recreate my queries exactly; for instance, I don't know how to exclude short papers using SPARQL, and I don't know how to express things like "longest streak" or "longest vacation" either. But maybe somebody else does; in which case, the query linked above may be a helpful starting point.
 
