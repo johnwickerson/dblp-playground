@@ -4,37 +4,34 @@
 
  rank |        name        | count 
 ------|--------------------|-------
-1 | Derek Dreyer       |    24
-1 | Benjamin C. Pierce |    24
-2 | Robert Harper      |    23
-3 | Lars Birkedal      |    22
-3 | Thomas W. Reps     |    22
-4 | Viktor Vafeiadis   |    19
-5 | Matthias Felleisen |    17
-5 | Peter Sewell       |    17
-5 | Gilles Barthe      |    17
-5 | Shmuel Sagiv       |    17
+1 | Derek Dreyer       |    25
+2 | Lars Birkedal      |    24
+2 | Benjamin C. Pierce |    24
+3 | Robert Harper |    23
+4 | Thomas W. Reps     |    22
+5 | Viktor Vafeiadis   |    21
 
 ### PLDI
 
  rank |       name       | count 
 ------|------------------|-------
-1 | Alexander Aiken  |    33
+1 | Alex Aiken       |    34
 2 | Martin T. Vechev |    27
-3 | Rastislav Bodík  |    21
-4 | Martin C. Rinard |    20
-5 | Isil Dillig      |    19
+3 | Martin C. Rinard |    23
+4 | Rastislav Bodík  |    21
+5 | Isil Dillig      |    20
 
 ### POPL and PLDI
 
  rank |       name       | count 
 ------|------------------|-------
-1 | Alexander Aiken  |    47
+1 | Alex Aiken       |    48
 2 | Martin T. Vechev |    36
-3 | Thomas W. Reps   |    34
-4 | Martin C. Rinard |    32
-5 | Derek Dreyer     |    31
+3 | Martin C. Rinard |    35
+4 | Derek Dreyer     |    34
+4 | Thomas W. Reps   |    34
 5 | Shmuel Sagiv     |    31
+5 | Isil Dillig      |    31
 
 ### ICFP
 
@@ -55,22 +52,20 @@
 ------|---------------------|-------
 1 | Jan Vitek           |    25
 2 | Kathryn S. McKinley |    22
-3 | Isil Dillig         |    17
-3 | Zhendong Su         |    17
-4 | Frank Tip           |    16
-4 | Mira Mezini         |    16
-4 | Yannis Smaragdakis  |    16
-5 | Sumit Gulwani       |    14
-5 | Ondrej Lhoták       |    14
+3 | Zhendong Su     |    21
+4 | Isil Dillig         |    18
+5 | Frank Tip           |    16
+5 | Mira Mezini         |    16
+5 | Yannis Smaragdakis  |    16
 
 ### POPL, PLDI, ICFP, and OOPSLA
 
  rank |         name          | count 
 ------|-----------------------|-------
-1 | Simon L. Peyton Jones |    59
-1 | Alexander Aiken       |    59
-2 | Derek Dreyer          |    54
-3 | Martin T. Vechev      |    47
-3 | Isil Dillig           |    47
-4 | Martin C. Rinard      |    46
-5 | Matthias Felleisen    |    44
+1 | Alex Aiken            |    60
+2 | Simon L. Peyton Jones |    59
+3 | Derek Dreyer          |    57
+4 | Martin T. Vechev      |    49
+4 | Isil Dillig           |    49
+4 | Martin C. Rinard      |    49
+5 | Lars Birkedal         |    48
