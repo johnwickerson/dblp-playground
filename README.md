@@ -34,6 +34,24 @@ _Note: I've only tested this on my Mac. I think PostgreSQL tends to be configure
 
 DBLP has recently released a service that allows you to explore its database using custom queries written in SPARQL. For instance, [here](https://sparql.dblp.org/paAxUo) is a query that asks "Who has the most POPL/PLDI/OOPSLA/ICFP papers?" However, it's hard to recreate my queries exactly; for instance, I don't know how to exclude short papers using SPARQL, and I don't know how to express things like "longest streak" or "longest vacation" either. But maybe somebody else does; in which case, the query linked above may be a helpful starting point.
 
+```sparql
+## Most POPL/PLDI/OOPSLA/ICFP papers
+PREFIX dblp: <https://dblp.org/rdf/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?authorname ?authorrecord (COUNT(DISTINCT?pub) AS ?count) WHERE {
+  VALUES ?stream { <https://dblp.org/streams/conf/popl> } .
+  # VALUES ?stream { <https://dblp.org/streams/conf/pldi> } .
+  # VALUES ?stream { <https://dblp.org/streams/conf/oopsla> } .
+  # VALUES ?stream { <https://dblp.org/streams/conf/icfp> } .
+  ?pub dblp:publishedInStream ?stream .
+  ?pub dblp:authoredBy ?authorrecord .
+  ?authorrecord rdfs:label ?authorname .
+}
+GROUP BY ?authorname ?authorrecord
+ORDER BY DESC(?count)
+LIMIT 25
+```
+
 ## Credits
 
 My code is adapted from some code I found on [this website](http://agdb.informatik.uni-bremen.de/dblp/statistics.php). Unfortunately I can't find any names of people to credit. My SQL queries are hodge-podge of snippets pasted from StackOverflow.
