@@ -21,6 +21,10 @@ clean:
 	rm -f editedBy*.tsv
 	rm -rf tsv
 
+deepclean:
+	rm -f dblp.xml.gz
+	rm -f dblp.dtd
+
 dblp.xml.gz:
 	echo "Downloading XML dump from DBLP"
 	wget http://dblp.org/xml/dblp.xml.gz
@@ -33,9 +37,9 @@ dblp.dtd:
 	wget http://dblp.org/xml/dblp.dtd
 
 test:
-	psql dblp -c "SELECT publYear, COUNT(publYear) FROM papers WHERE publYear BETWEEN 1995 AND 2005 GROUP BY publYear ORDER BY publYear"
+	psql dblp -c "SELECT publYear, COUNT(publYear) FROM papers WHERE publYear BETWEEN 1995 AND 2026 GROUP BY publYear ORDER BY publYear"
 
-myqueries:
+mostpapers:
 	echo "Most POPL papers:"
 	FIRST=5 CONF=\'POPL\' make countMostPapers
 	echo "Most PLDI papers:"
@@ -48,6 +52,8 @@ myqueries:
 	FIRST=5 CONF=\'OOPSLA\',\'OOPSLA1\',\'OOPSLA2\' make countMostPapers
 	echo "Most POPL, PLDI, ICFP, and OOPSLA papers:"
 	FIRST=5 CONF=\'PLDI\',\'POPL\',\'ICFP\',\'OOPSLA\',\'OOPSLA1\',\'OOPSLA2\' make countMostPapers
+
+longestholidays:
 	echo "Longest POPL holiday:"
 	FIRST=5 CONF=\'POPL\' make findHolidays
 	echo "Longest PLDI holiday:"
@@ -56,6 +62,8 @@ myqueries:
 	FIRST=5 CONF=\'ICFP\' make findHolidays
 	echo "Longest OOPSLA holiday:"
 	FIRST=5 CONF=\'OOPSLA\',\'OOPSLA1\',\'OOPSLA2\' make findHolidays
+
+longestcareers:
 	echo "Longest POPL career:"
 	FIRST=5 CONF=\'POPL\' make findLongestCareer
 	echo "Longest PLDI career:"
@@ -64,6 +72,8 @@ myqueries:
 	FIRST=5 CONF=\'ICFP\' make findLongestCareer
 	echo "Longest OOPSLA career:"
 	FIRST=5 CONF=\'OOPSLA\',\'OOPSLA1\',\'OOPSLA2\' make findLongestCareer
+
+longeststreaks:
 	echo "Longest POPL streak:"
 	FIRST=3 CONF=\'POPL\' make findStreaks
 	echo "Longest PLDI streak:"
@@ -74,6 +84,8 @@ myqueries:
 	FIRST=3 CONF=\'OOPSLA\',\'OOPSLA1\',\'OOPSLA2\' make findStreaks
 	echo "Longest SIGPLAN streak:"
 	FIRST=5 make findSigplanStreaks
+
+mostpapersperconf:
 	echo "Most POPL papers per conference:"
 	FIRST=2 CONF=\'POPL\' make findMostPapersPerConf
 	echo "Most PLDI papers per conference:"

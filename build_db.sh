@@ -9,10 +9,13 @@ set -e
 
 DIR="$( pwd )"
 
-echo "Load data into the database"
+echo "Loading papers.tsv into the database"
 psql dblp -c "COPY papersOriginal FROM '$DIR/tsv/papers.tsv' delimiter E'\t'"
+echo "Loading authors.tsv into the database"
 psql dblp -c "COPY authors FROM '$DIR/tsv/authors.tsv' delimiter E'\t'"
+echo "Loading editedBy.tsv into the database"
 psql dblp -c "COPY editedBy FROM '$DIR/tsv/editedBy.tsv' delimiter E'\t'"
+echo "Loading writtenBy.tsv into the database"
 psql dblp -c "COPY writtenBy FROM '$DIR/tsv/writtenBy.tsv' delimiter E'\t'"
 
 echo "Creating auxiliary tables"

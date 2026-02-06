@@ -30,9 +30,9 @@ _That is, the longest gap between successive papers._
 1 | Lennart Augustsson  | 1998 | 2023 |  25
 2 | Wei-Ngan Chin       | 2001 | 2024 |  23
 3 | John Longley        | 1999 | 2020 |  21
-4 | Scott F. Smith 0001 | 2000 | 2020 |  20
-4 | Flemming Nielson    | 1997 | 2017 |  20
 4 | Hanne Riis Nielson  | 1997 | 2017 |  20
+4 | Scott F. Smith      | 2000 | 2020 |  20
+4 | Flemming Nielson    | 1997 | 2017 |  20
 5 | Hideya Iwasaki      | 1997 | 2016 |  19
 
 ### OOPSLA
@@ -40,10 +40,11 @@ _That is, the longest gap between successive papers._
  rank |name| from |to| gap 
 ------|--------------------|------|------|-----
 1 | Brad A. Myers      | 1992 | 2020 |  28
+1 | Giuseppe Castagna  | 1997 | 2025 |  28
 2 | Vijay Sundaresan   | 2000 | 2024 |  24
 2 | Susan Eisenbach    | 1998 | 2022 |  24
-3 | Gail E. Kaiser     | 1992 | 2014 |  22
 3 | Henry Lieberman    | 1988 | 2010 |  22
+3 | Gail E. Kaiser     | 1992 | 2014 |  22
 4 | Stephen N. Freund  | 1999 | 2020 |  21
 4 | Alan Borning       | 1994 | 2015 |  21
 5 | Benjamin C. Pierce | 1999 | 2019 |  20

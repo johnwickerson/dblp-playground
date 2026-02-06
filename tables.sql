@@ -3,6 +3,8 @@
 
 DROP TABLE if EXISTS authorPairs;
 
+SET maintenance_work_mem = '2GB';
+
 CREATE index completeWrittenBy ON writtenBy(pid, aid, apos);
 CREATE index author ON writtenBy(aid);
 CREATE index id ON writtenBy(pid);

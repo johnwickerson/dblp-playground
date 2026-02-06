@@ -3,3 +3,8 @@ dblp.dtd
 dblp.xml
 dblp.xml.gz
 *.class
+authors.tsv
+editedBy.tsv
+papers.tsv
+writtenBy.tsv
+tsv/
