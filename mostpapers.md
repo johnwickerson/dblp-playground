@@ -52,7 +52,7 @@
  rank |        name         | count 
 ------|---------------------|-------
 1 | Jan Vitek           |    25
-2 | Zhendong Su 0001    |    22
+2 | Zhendong Su         |    22
 2 | Kathryn S. McKinley |    22
 3 | Isil Dillig         |    18
 4 | Frank Tip           |    16

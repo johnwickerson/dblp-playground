@@ -4,7 +4,7 @@
 
 _Note: In what follows, I define a paper to be any entry in the proceedings that is at least four pages long. This slightly coarse rule means that some very short but legitimate papers may not get counted. There may also be a small number of entries that are not legitimate papers, such as extended tributes or announcements, but which get counted anyway._
 
-**Last update: 11-Feb-2025 (up to and including POPL 2025)**
+**Last update: 06-Feb-2026 (up to and including POPL 2026)**
 
 * [Most papers](mostpapers.md)
 
@@ -26,7 +26,7 @@ _Note: I've only tested this on my Mac. I think PostgreSQL tends to be configure
 
 1. Start your PostgreSQL server using `pg_ctl -D /opt/homebrew/var/postgres start`. There are further instructions about getting started with PostgreSQL on [this webpage](https://www.robinwieruch.de/postgres-sql-macos-setup).
 
-2. Run `make`. This downloads the DBLP XML dump from `http://dblp.org/xml/dblp.xml.gz`, unzips it into `dblp.xml`, and then converts it into a PostgreSQL database. Caution: the DBLP XML dump is quite a large file, and converting it into a database took me about half an hour.
+2. Run `make`. This downloads the DBLP XML dump from `http://dblp.org/xml/dblp.xml.gz`, unzips it into `dblp.xml`, and then converts it into a PostgreSQL database. Caution: the DBLP XML dump is quite a large file, and converting it into a database took me about half an hour. **[Update, Feb-2026: it now seems to take several hours, and I'm not sure why.]**
 
 3. Run `make myqueries`. See the Makefile for the gory details.
 
